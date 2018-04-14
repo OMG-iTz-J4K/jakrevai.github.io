@@ -71,6 +71,10 @@
 	width: 32%;
 }
 
+.col-2 p{
+	position:absolute;
+}
+
 /* Text organistion for the carousel */
 
 .itemWrapper
@@ -164,6 +168,10 @@
     background-image: none;
     color: #a35de8;
     width: 10%;
+}
+
+.carousel-inner{
+	height: 450px;
 }
 	
 /* Containers */
@@ -1786,7 +1794,7 @@
 	}
 
 	p, ul, ol, dl, table {
-		margin-bottom: 2em;
+		/* margin-bottom: 2em; */
 	}
 
 	br.clear {
