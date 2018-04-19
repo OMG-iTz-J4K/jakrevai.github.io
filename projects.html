@@ -53,57 +53,68 @@
 					<section id="SpookySid">		
 						<div class="container">
 							<header>
-								<h2>Spooky Sid. (WIP)</h2>	
+								<h2>Spooky Sid. (C#, Unity Engine) (WIP)</h2>	
 								<br />
-								Final Group Project during my studies at AIE.
-															
+								Final Group Project during my studies at AIE.															
 							</header>
 						</div>
 					</section>
 					
 				<!-- Spooky Sid Cont -->					
-					<div class="container">
+					<div class="container-projects">
 						<header>
 							<h2>Short Brief</h2>
 						</header>
 						
-						<div class="col-1">
+						<div class="col-1-projects">
 						<p>This was the final assignment to complete my studies at AIE. This overall project has taught me valuable experience about conceptualising an idea and continuously working on it to produce a workable game by the end of the subject. My Role throughout this project was Lead Programmer mainly programming our AI for the game and most of the core mechanics surrounding our player.
 						</p>
 						</div>
 						
-						<div class="col-2">
-							<ul>
-								<li>Role: Lead Programmer</li>
-								<li>Engine: Unity</li>
-								<li>Timeframe: ~3 Months</li>
-							</ul>
-						</div>
+						<!-- <div class="col-2"> -->
+							<!-- <ul> -->
+								<!-- <li>Role: Lead Programmer</li> -->
+								<!-- <li>Engine: Unity</li> -->
+								<!-- <li>Timeframe: ~3 Months</li> -->
+							<!-- </ul> -->
+						<!-- </div> -->
 					</div>
 					
-					<div class="container">
+					<div class="container-projects">
 						<header>
 							<h2>AI Finite State Machine</h2>
 						</header>
 						
-						<div class="col-1">
-						<p>I was the sole programmer for our AI on this project, based on our timeframe for the project and the simplicity of what was needed for our AI, I opted for the FSM solution. There are two types of agents in our game, GPATROL(Threat to player) and the CIVILLIANS. Due to time constraints and issues popping up throughout the project that required my attention over the AI, i had to keep our AI really simple and keep down the required states for our agents, the Civillians consist of 3 basic States(Wander, Retreat, Alerted) and the GPatrol have 4 basic states as well(Wander, Retreat, Alerted, Pursue).
-						
-						<br>
-						<br>
-						What was the challenge?
-						What approach did you take to solving it?
-						What would you differently now?
-
-						What each state does.
-						Problem Solving?</p>
+						<div class="col-1-projects">
+						<p>I was the sole programmer for our AI on this project, based on our timeframe for the project and the simplicity of what was needed for our AI, I opted for the FSM solution. There are two types of agents in our game, GPATROL(Threat to player) and the CIVILLIANS. Due to time constraints and issues popping up throughout the project that required my attention over the AI, i had to keep our AI really simple and keep down the required states for our agents, the Civillians consist of 3 basic States(Wander, Retreat, Alerted) and the GPatrol have 4 basic states as well(Wander, Retreat, Alerted, Pursue).</p>
 						</div>
 						
-						<div class="col-2">
-							<h3 class="alt">Civillian FSM</h3>
-							<ul>
-								<li>FSM IMAGE</li>
-							</ul>
+						<!-- <div class="col-2"> -->
+							<!-- <h3 class="alt">Civillian FSM</h3> -->
+							<!-- <ul> -->
+								<!-- <li>FSM IMAGE</li> -->
+							<!-- </ul> -->
+						<!-- </div> -->
+					</div>
+					
+					<div class="container-projects">
+						<header>
+							<h2>NavMesh</h2>
+						</header>
+						
+						<div class="col-1-projects">
+						<p>Using Unity’s inbuilt NavMesh solution one of the major issues that cropped up during the end of production was that the Agents kept diverting from the current path straight into a wall when there was no call to update the path. During debugging i had found that part of the issue lies within our NavMesh which got complex near the end and certain geometry pieces created jagged corners in which the AI would just choose to path to that corner as the shortest route. Either this was a nasty bug in our code or an underlying issue with some of the pathing with the inbuilt system Unity has, I managed to get a quick work-around up and running as this issue popped up within the last 2 weeks of production and a lot of my time was needed elsewhere. My solution was to add proxy renderers to our navmesh too smooth it out, and time how long it takes our agent to reach its destination, if the current time spent on the path was greater than the estimated time, then i reset the path. I did want to try and tackle the solution properly through using the “corners” array that unity provides and debug what would be causing the sudden change in path there but i just ran out of time.</p>
+						</div>
+					
+					</div>
+					
+					<div class="container-projects">
+						<header>
+							<h2>Tool For Designer</h2>
+						</header>
+						
+						<div class="col-1-projects">
+						<p>Our game relied on objects in the game that the player can “possess” and “hide” in to interact with our NPC’s such as possessing an object and launching it towards an NPC or hiding in one and attracting them to that location to play a big scare animation. As the artists were pumping out a lot of assets for these items, it eventually became an annoying task for our designer to set each “item” up correctly. So I was tasked with making an editor script that checks each component on the current gameobject, and with the click of a button, adds all the required components and the correct values to that item. Also goes through the item’s renderer and makes sure its using the correct shader and textures required.</p>
 						</div>
 					</div>
 					
