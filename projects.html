@@ -13,6 +13,7 @@
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/js/modalFunction.js"></script>
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 	</head>
@@ -47,16 +48,26 @@
 
 			</div>
 			
+			<div id="myModal" class="modal" style="display: none;">
+				<span class="close" onclick="closeModal()">×</span>
+				<img class="modal-content" id="img01">
+				<div id="caption"></div>
+			</div>
+			
 		<!-- Main -->
 			<div id="main">				
 				<!-- Spooky Sid -->
 					<section id="SpookySid">		
 						<div class="container">
-							<header>
+							<!-- <header> -->
 								<h2>Spooky Sid. (C#, Unity Engine)</h2>	
 								<br />
-								Final Group Project during my studies at AIE.															
-							</header>
+								Final Group Project during my studies at AIE.
+								<!-- <img class="center-block project-header-img" src="images/spookysid.gif" alt="SpookySidGif">-->
+								<video width="800" height="400" controls autoplay loop>
+								<source src="images/SpookySid.webm" type="video/webm"></source>
+								</video>
+							<!-- </header> -->
 						</div>
 					</section>
 					
@@ -66,18 +77,15 @@
 							<h2>Short Brief</h2>
 						</header>
 						
-						<div class="col-1-projects">
-						<p>This was the final assignment to complete my studies at AIE. This overall project has taught me valuable experience about conceptualising an idea and continuously working on it to produce a workable game by the end of the subject. My Role throughout this project was Lead Programmer mainly programming our AI for the game and most of the core mechanics surrounding our player.
-						</p>
+						<div class="col-sm-4" id="projects-img">
+							<img class="center-block project-header-img clickable" id="img10" onClick="viewImage(10)" src="images/spookysid.png" alt="SpookySid">
 						</div>
 						
-						<!--<div class="col-2"> -->
-						<!--	 <ul> -->
-						<!--		 <li>Role: Lead Programmer</li> -->
-						<!--		 <li>Engine: Unity</li> -->
-						<!--		 <li>Timeframe: ~3 Months</li> -->
-						<!--	 </ul> -->
-						<!-- </div> -->
+						<div class="col-1-projects">						
+						<p>This was the final assignment to complete my studies at AIE. This overall project has taught me valuable experience about conceptualising an idea and continuously working on it to produce a workable game by the end of the subject. My Role throughout this project was Lead Programmer mainly programming our AI for the game and most of the core mechanics surrounding our player.
+						</p>
+						</div>				
+
 					</div>
 					
 					<div class="container-projects">
@@ -85,16 +93,13 @@
 							<h2>AI Finite State Machine</h2>
 						</header>
 						
+						<div class="col-sm-4" id="projects-img">
+							<img class="center-block project-header-img clickable" id="img11" onClick="viewImage(11)" src="images/CIVILLIANStateDiagram.png" alt="CivillianStates">
+						</div>
+						
 						<div class="col-1-projects">
 						<p>I was the sole programmer for our AI on this project, based on our timeframe for the project and the simplicity of what was needed for our AI, I opted for the FSM solution. There are two types of agents in our game, GPATROL(Threat to player) and the CIVILLIANS. Due to time constraints and issues popping up throughout the project that required my attention over the AI, i had to keep our AI really simple and keep down the required states for our agents, the Civillians consist of 3 basic States(Wander, Retreat, Alerted) and the GPatrol have 4 basic states as well(Wander, Retreat, Alerted, Pursue).</p>
 						</div>
-						
-						<!-- <div class="col-2"> -->
-							<!-- <h3 class="alt">Civillian FSM</h3> -->
-							<!-- <ul> -->
-								<!-- <li>FSM IMAGE</li> -->
-							<!-- </ul> -->
-						<!-- </div> -->
 					</div>
 					
 					<div class="container-projects">
@@ -115,6 +120,61 @@
 						
 						<div class="col-1-projects">
 						<p>Our game relied on objects in the game that the player can “possess” and “hide” in to interact with our NPC’s such as possessing an object and launching it towards an NPC or hiding in one and attracting them to that location to play a big scare animation. As the artists were pumping out a lot of assets for these items, it eventually became an annoying task for our designer to set each “item” up correctly. So I was tasked with making an editor script that checks each component on the current gameobject, and with the click of a button, adds all the required components and the correct values to that item. Also goes through the item’s renderer and makes sure its using the correct shader and textures required.</p>
+						</div>
+					</div>
+					
+					<!-- Small Village Sim -->									
+					<section id="SmallVillageSim">		
+						<div class="container">
+							<!-- <header> -->
+								<h2>Village Test Simulation. (C++, OpenGL)</h2>	
+								<br />
+								A small project showcasing my FiniteStateMachine and A* Pathfinding for the first time.
+								<!-- <img class="center-block project-header-img" src="images/VillageSim.gif" alt="VillageSimGif"> -->
+								<video width="800" height="400" controls autoplay loop>
+								<source src="images/VillageSim.webm" type="video/webm"></source>
+								</video>
+								
+							<!-- </header> -->
+						</div>
+					</section>
+					
+					<!-- Small Village Sim Cont -->					
+					<div class="container-projects">
+						<header>
+							<h2>Short Brief</h2>
+						</header>
+						
+						<div class="col-1-projects">						
+						<p>This project was my very first implementation of a Finite State Machine, as well as A* Pathfinding. My overall goal for the project was to create a simulation with a few agents having certain roles that they fulfill and utilise A* for the pathing. These roles are:
+						<li><b>Default:</b> Default agents can only enter the Wander state and no other.</li>
+						<li><b>WellCollector:</b> Agents with this role are in charge of collecting water from the well when the storage is low.</li>
+						<li><b>Gatherer:</b> Agents with this role are in charge of gathering food from the bushes outside of town when storage is low.</li>
+						This project was a lot of fun to work on and gave me a lot of in depth knowledge on the inner workings of how a State Machine runs, and learning through the Dijkstra's algorithm and A Star was a huge learning curve for me and I enjoyed it thoroughly.</p>
+						</div>
+					</div>
+					
+					<div class="container-projects">
+						<header>
+							<h2>Pathfinding</h2>
+						</header>
+						
+						<div class="col-sm-4" id="projects-img">
+							<img class="center-block project-header-img clickable" id="img12" onClick="viewImage(12)" src="images/VillagePath.png" alt="VillagePathing">
+						</div>
+						
+						<div class="col-1-projects">						
+							<p>My agents are using my first implementation of A* pathfinding. I setup my graph to load in a 64x64 texture, so each texture that is on screen is its own node. This made it super easy to create the Node map for the pathfinding, once each texture tile was placed, I simply looped through all my nodes in the graph and added a connection to the next node based on its position. I didn't really bother with creating a complicated map with varying costs, my map only consists of two walkable tiles which are the paths and grass tiles. The grass costs are high cost and paths are low cost. One of the few issues I did run into during this project that I didn't have time to properly debug before hand-in, was sometimes the paths created would be an odd diagonal pattern going between a low-cost node to a high-cost node continuously until it hits the designated end node, when it was clear that the path from the starting point to end point can just follow the low-cost tiles in a straight line. I believe this was a connection issue that i had incorrectly setup but it was a rare occurrence that popped up from time to time.</p>
+						</div>
+					</div>
+					
+					<div class="container-projects">
+						<header>
+							<h2>Agent States</h2>
+						</header>
+						
+						<div class="col-1-projects">						
+						<p>There are six states that my Agents use, some are only accessible to Agents whose role matches the role that the state calls for, for example only the Agent with the role “WellCollector” can enter the state “CollectWaterState”. By default every Agent can enter the WanderState and just walk around the map, every step they take drains some value away from their personal “Hunger” and “Thirst”. Once those values hit zero the Agent heads to the storage to fill them back up, and draining what's in the storage. Whenever a storage hits zero the “Gatherers” and “WellCollectors” will travel to the designated spot to fetch some water/food and take it back to storage to replenish it. A very basic back and forth system simply to show my personal state machine off and its triggers. More states and Agent types like a “Wolf” would’ve been added but I was under a strict time limit during this assignment, so I kept it simple.</p>
 						</div>
 					</div>
 					
@@ -144,6 +204,5 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<!-- <script src="assets/js/carousel.js"></script> -->
-
 	</body>
 </html>
