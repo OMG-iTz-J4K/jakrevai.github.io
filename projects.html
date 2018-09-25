@@ -53,6 +53,7 @@
 
     </div>
 
+    <!--Modal box displaying images when clicked on-->
     <div id="myModal" class="modal" style="display: none;">
         <span class="close" onclick="closeModal()">×</span>
         <img class="modal-content" id="img01">
@@ -62,7 +63,7 @@
     <!-- Main -->
     <div id="main">
         <!-- Spooky Sid -->
-        <section id="SpookySid">
+        <section id="SpookySid"> <!--Section ID's will need to match the correct image alt tag in index.html for the jquery func to work-->
             <div class="container">
                 <!-- <header> -->
                 <h2>Spooky Sid. (C#, Unity Engine)</h2>
@@ -205,6 +206,13 @@
     </div>
 
     <!-- Scripts -->
+    <script>
+        $(document).click(function (event) {
+            if (!$(event.target).closest(".clickable").length) {
+                closeModal();
+            }
+        });
+    </script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
     <script src="assets/js/jquery.scrollzer.min.js"></script>
@@ -212,6 +220,5 @@
     <script src="assets/js/util.js"></script>
     <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="assets/js/main.js"></script>
-    <!-- <script src="assets/js/carousel.js"></script> -->
 </body>
 </html>
